@@ -1,7 +1,7 @@
-# ezra        
+# ezra visser
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
+# Submission Date 10/28/24
+# Lab 07
 # Lab Section: 
 # Sources, people worked with, help given to: 
 # your
@@ -41,7 +41,7 @@ while True:
 
 
 factorial = factorial_calc(upper_bound)
-#print(f"The result of the factorial based on the given bound {upper_bound} is {result}.")
+
 
 
 print(f"The result of the factorial based on the given bound is {factorial}")
@@ -63,7 +63,17 @@ print("*"*75)
 # The sum should start at 0 
 
 num_sum = 0 
-
+while True:
+    input_num= input("enter a number to be added to the sum. enter exit to stop ")
+    if input_num.isdigit()==True:
+       input_num_true=int(input_num)
+       num_sum=num_sum+input_num_true
+    elif input_num[0]=='-':
+        input_num=input_num.removeprefix('-')
+        input_num_true=int(input_num)
+        num_sum=num_sum-input_num_true
+    else:
+        break
 print(f"Your final sum is {num_sum}")
 
 print("*"*75)
@@ -83,5 +93,21 @@ print("*"*75)
     # So, it should function the same for `5 + 6` as `5+6`
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
-
-        
+while True:
+    user_input=input("enter a simple 2 number calculation using +,-,*,/,or % ")
+    if user_input.lower()==('exit'):
+        break
+    calc_input=user_input.replace(' ','')
+    num_1= int(calc_input[0])
+    operator=calc_input[1]
+    num_2=int(calc_input[2])
+    if operator=='+':
+        print(num_1+num_2)
+    elif operator=='-':
+        print(num_1-num_2)
+    elif operator=='*':
+        print(num_1*num_2)
+    elif operator=='/':
+        print(num_1/num_2)
+    elif operator=='%':
+        print(num_1%num_2)
