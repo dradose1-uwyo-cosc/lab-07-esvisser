@@ -1,4 +1,4 @@
-# Your Name Here
+# ezra        
 # UWYO COSC 1010
 # Submission Date
 # Lab XX
@@ -18,6 +18,31 @@
 # You will continue to prompt the user until a proper integer value is entered
 
 factorial = 1
+
+def factorial_calc(n):
+    factorial = 1
+    for i in range(1, n + 1):
+        factorial *= i
+    return factorial
+
+
+while True:
+    int_input = input("Please enter a positive integer for the upper bound: ")
+    
+   
+    if int_input.isdigit():
+        upper_bound = int(int_input)
+        if upper_bound > 0:
+            break
+        else:
+            print("The number must be positive. try again.")
+    else:
+        print("enter a positive integer.")
+
+
+factorial = factorial_calc(upper_bound)
+#print(f"The result of the factorial based on the given bound {upper_bound} is {result}.")
+
 
 print(f"The result of the factorial based on the given bound is {factorial}")
 
